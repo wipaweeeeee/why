@@ -1,12 +1,12 @@
 <html>
-	<head>
-		<title>Three.js Boilerplate</title>
-		<style>
-			body { margin: 0; }
-			canvas { width: 640px; height: 360px }
-		</style>
+  <head>
+    <title>Three.js Boilerplate</title>
+    <style>
+      body { margin: 0; }
+      canvas { width: 640px; height: 360px }
+    </style>
 
-		    <title>extrudin'</title>
+        <title>extrudin'</title>
 
 <!--     // <script src="js/three.min.js"></script>
     // <script src="js/Detector.js"></script>
@@ -18,7 +18,7 @@
     // <script src="js/controls/DragControls.js"></script>
     // <script src="js/controls/TrackballControls.js"></script> -->
     
-   	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
     <script src="https://cdn.rawgit.com/josdirksen/learning-threejs/6b72aae6/libs/d3-threeD.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/Detector.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/libs/stats.min.js"></script>
@@ -27,24 +27,26 @@
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/TransformControls.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/DragControls.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js"></script>
-	</head>
-	<body>
+  </head>
+  <body>
+    <div id="svg" style="display: none;"><%= svg %></div>
+    <div id="Stats-output"></div>
+    <div id="WebGL-output"></div>
+    <div id="batman" style="display:none">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+      <g>
+          <path id="v" d="M4.7,6.4h25.1L51,71.2h0.7l21-64.8h23.5L64.8,94H37L4.7,6.4z"/>
+      </g>
+      </svg>
+    </div>
 
-		<div id="Stats-output"></div>
-		<div id="WebGL-output"></div>
-		<div id="batman" style="display:none">
-		    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		     viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-			<g>
-			    <path id="v" d="M4.7,6.4h25.1L51,71.2h0.7l21-64.8h23.5L64.8,94H37L4.7,6.4z"/>
-			</g>
-			</svg>
-		</div>
-
-		<script>
-		var orbit;
+    <script>
+    var orbit;
 
 function init() {
+var svg = document.getElementById('svg').innerHTML;
+console.log(svg);
 var stats = initStats();
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
@@ -179,6 +181,6 @@ function initStats() {
 }
 window.onload = init;
 </script>
-		<!-- <script src="scripts.js"></script> -->
-	</body>
+    <!-- <script src="scripts.js"></script> -->
+  </body>
 </html>
